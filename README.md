@@ -228,3 +228,5 @@
 - `git branch 01-css-bassic`엔터
 
 ### 3.7. 브랜치 목록보기
+
+- `git branch` 엔터
