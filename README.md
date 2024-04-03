@@ -201,18 +201,30 @@
 ## 3. Git 기초 명령어
 
 ### 3.1. 깃으로 관리할거에요.(초기화 : 한번만)
+
 - `git init`
 
 ### 3.2. 깃으로 관리하는 파일을 추가하기(매일 퇴근전, 필요시)
+
 - `git add .`
 
 ### 3.3. 깃으로 작업 내역을 기록해 둔다.(메모 / 매일 퇴근전, 필요시)
+
 - `git commit`
 
 ### 3.4. 깃을 깃허브로 업로드 한다.
+
 - `git remote add 이름 http주소`
 - `git remote add origin https://github.com/2doh/blog-kakaobrain-2doh.git`
 - `git remote -v`
 
 ### 3.5. 깃을 깃허브로 PUSH 후 퇴근.(매일 퇴근전, 필요시)
+
 - `git push -u origin main`
+
+### 3.6. 브랜치(나뭇가지 - 코드분기) 나누기
+
+- `git branch 이름`
+- `git branch 01-css-bassic`엔터
+
+### 3.7. 브랜치 목록보기
