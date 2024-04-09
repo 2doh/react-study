@@ -31,6 +31,10 @@
   : 그림깔고 내용 위치잡기
 
   ```css
+  .main-top-banner a {
+  display: block;
+  width: 100%;
+  height: 100%;
   background-image: url("../images/br.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -40,6 +44,29 @@
   위의 축약형
 
 ```css
-background: url("../images/br.png") no-repeat center;
-background-size: cover;
+  .main-top-banner a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url("../images/br.png") no-repeat center;
+  background-size: cover;
+```
+
+- flex를 활용시 참고 사항
+  : 기본적으로 flex를 적용하면 줄내림은 없다.
+
+```css
+.box {
+  display: flex;
+  flex-wrap: nowrap;
+}
+```
+
+: 필요 시 100% 넘는 item들이 있어 줄내림 하려면
+
+```css
+.box {
+  display: flex;
+  flex-wrap: wrap;
+}
 ```
