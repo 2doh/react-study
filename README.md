@@ -427,3 +427,166 @@ DOM(Document Object Model)
 
     yarn install 패키지명@버전
 ```
+
+# js 4장
+
+- var 변수명 = 변수값;
+- let 변수명 = 변수값;
+- const 변수명 = 변수값;
+
+```txt
+   호이스팅(hoisting)은 변수, 함수를 선언하지 않았는데도 사용할수있음(hoisting이 일어나지 않도록 주의 : var 쓰지 말자)
+```
+
+# js 5장
+
+```txt
+코딩에서의 값 : 변수에 할당(보관한)된 결과 / 표현식이 평가(식을 해석해서 값을 생성하고 참조하는 것)된 결과를 말한다
+변수 : 컴퓨터 공간에 이름을 붙여둔 방 한개
+
+리터럴 : 사람이 이해할 수 있는 문자 혹은 약속된 기호를 사용해서 값을 생성하는 표기법
+리터럴은 값을 평가해서 코드에 활용하기 위한 문법
+
+표현식(experession) : 값으로 평가될 수 있는 모든 식
+
+문(statement) : 프로그램을 구성하는 기본단위 / 최소 실행단위
+```
+
+# css의 opcity와 position의 이해
+
+- opacity는 DOM의 내용까지도 투명도가 적용됨
+- position
+  : position 중 absolute로 픽셀 위치 설정의 경우 반드시 바깥 영역에도 position 코드가 있어야 함
+  : position 중 fixed는 웹 브라우저를 기준으로 배치
+  : fixed는 반드시 left, top, right, bottom을 주자
+  : fixed는 보통 z-index를 준다
+  : fixed는 높이에 반영이 안되므로 주의(레이아웃 배치 문제)
+
+```css
+대상 {
+  position: relative;
+}
+대상 {
+  position: absolute;
+}
+대상 {
+  position: fixed;
+}
+```
+
+- 주의사항
+
+```css
+.box-wrap {
+  position: relative;
+  margin: 0 auto;
+  width: 600px;
+  height: 300px;
+  background: orange;
+}
+.box {
+  position: absolute;
+  /* absolute 상위에 position 있어야함 */
+  right: 80px;
+  bottom: 20px;
+
+  width: 200px;
+  height: 200px;
+  background: red;
+}
+```
+
+# js 윈도우 스크롤의 위치를 알아내기
+
+```js
+window.addEventLinstenr("scroll", function () {
+  // 하고 싶은 일
+});
+```
+
+```js
+window.addEventLinstenr("scroll", function () {
+  // 스크롤바의 위치
+  const scY = window.scrollY;
+});
+```
+
+# js로 css의 클래스 동적으로 활용하기
+
+```js
+// DOM 찾아서 변수로 레퍼런스 하기
+const tags = document.querySelector(".클래스명");
+// DOM을 이용해서 선택한 곳에 적용된 css 클래스 목록 추가
+tags.classList.add("클래스명");
+// DOM을 이용해서 선택한 곳에 적용된 css 클래스 목록 제거
+tags.classList.remove("클래스명");
+// DOM을 이용해서 선택한 곳에 적용된 css 클래스 목록 추가 / 제거
+tags.classList.toggle("클래스명");
+// DOM을 이용해서 선택한 곳에 적용된 css 클래스 목록 포함여부
+tags.classList.contain("클래스명");
+```
+
+# js의 함수란 1번
+
+- 동일한 코드가 2번 이상 반복되면 함수를 만드려고 하자
+- 반복이 되지 않더라도 하나의 기닝이 너무 복잡하면 함수를 만들려고 하자
+- 복잡하지 않은데 코드가 너무 길어지면 함수로 묶어주려고 하자
+- 실행의 결과가 그때, 그때 다른 경우에도 만들자
+
+```js
+// 함수 만들기
+function 적절한동사() {
+  // 하고 싶은 일 작성 ...
+}
+// 함수 사용하기(함수호출)
+적절한동사();
+// 예시
+fetch().then().then().catch();
+```
+
+- 함수는 무조건 1개의 값을 리턴하도록 규정되어 있음
+- 리턴 : 함수 실행 후 값을 돌려주는 것을 말함
+
+```js
+function 함수명() {
+  // 몰래 작성됨 return undefined;
+}
+함수명();
+```
+
+- 함수 정의 문
+
+```js
+function 함수이름() {
+  // 할일
+}
+```
+
+- 함수 실행/호출(call)문
+
+```js
+함수이름();
+```
+
+# js 함수의 매개변수란? 2번
+
+- 초기 기능 즉, 함수를 정의하기 전 기능 상 자주 변하는 데이터를 고민
+- 기능은 스크롤시 특정 위치보다 커지면 css 추가
+- 함수는 스스로 지역 즉, Local 영역(Scope)에서 처리되는 것이 좋다고 봄
+- `처리` : 변수를 찾거나 잘못된 값이 전달되어 오류가 나는 것 방지
+
+```js
+function sum() {
+  return 5 + 6;
+}
+
+const a = 5;
+const b = 0;
+function divide(_num1, _num2) {
+  if (b === 0) {
+    alert("나눗셈에서 0은 안됨");
+  }
+  return a / b;
+}
+divide(a, b);
+```
