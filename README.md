@@ -11,46 +11,6 @@
    적절한 자료구조 + 적절한 함수를 활용하고,
    흐름을 제어하여 요구사항을 만족 시킨다.
 
-# js Syntax 코드 위치
-
-1. inline 방식
-
-```html
-<div class="wrap" onclick="alert('안녕');"></div>
-```
-
-2. 태그 방식
-
-```html
-<script>
-  alert("반가워");
-</script>
-```
-
-3. 외부파일 방식
-
-```html
-<script src="./js/script.js">
-  alert("반가워"); // 실행안됨
-</script>
-```
-
-# Swiper Slide 적용해 보기
-
-- Slide 를 직접 코딩하지 마세요.
-- 사용법을 배운다.
-- Swiper(https://swiperjs.com/), Slick(https://kenwheeler.github.io/slick/), BxSlider(https://bxslider.com/) 가 있어요.
-
-## 1. Swiper 슬라이드 적용시 주의 사항
-
-- html 로드 완료 및 이미지 로드 완료 후 실행 권장.
-
-```js
-window.addEventListener("load", function () {
-  // 실제 슬라이드 코드 배치하자.
-});
-```
-
 # js 2장
 
 ```txt
@@ -142,6 +102,136 @@ window.addEventListener("load", function () {
       Babel 이란 : 현재 최신 코드를 옛날 코드로 변환해 준다.
 
 
+```
+
+# js 3장
+
+```txt
+DOM(Document Object Model)
+   - html 을 읽고, 수정 등등의 조작을 하는
+     함수 (DOM API)
+     document.querySelector(".wrap")
+
+    클라이언트 사이드 API
+    DOM, BOM, Canvas, XMLHttpRequest, fetch
+    requestAnimationFrame, SVG, Web Storage,
+    Web Component, Web Worker 등..
+
+    Node.js   설치를 하면 자동으로
+    npm 설치 됩니다. Node Package(js 소스) Manager
+    https://www.npmjs.com/
+
+    npm install 패키지명@버전
+    node -v
+    npm -v
+
+    nvm (Node.js 의 버전을 자유롭게 변경하고, 설치)
+
+    yarn install 패키지명@버전
+```
+
+# js 4장
+
+- var 변수명 = 변수값;
+- let 변수명 = 변수값;
+- const 변수명 = 변수값;
+
+```txt
+   호이스팅(hoisting)은 변수, 함수를 선언하지 않았는데도 사용할수있음(hoisting이 일어나지 않도록 주의 : var 쓰지 말자)
+```
+
+# js 5장
+
+```txt
+코딩에서의 값 : 변수에 할당(보관한)된 결과 / 표현식이 평가(식을 해석해서 값을 생성하고 참조하는 것)된 결과를 말한다
+변수 : 컴퓨터 공간에 이름을 붙여둔 방 한개
+
+리터럴 : 사람이 이해할 수 있는 문자 혹은 약속된 기호를 사용해서 값을 생성하는 표기법
+리터럴은 값을 평가해서 코드에 활용하기 위한 문법
+
+표현식(experession) : 값으로 평가될 수 있는 모든 식
+
+문(statement) : 프로그램을 구성하는 기본단위 / 최소 실행단위
+```
+
+# js 6장
+
+```txt
+데이터 타입  : 자료(JS의 리터럴로 처리될 수 있는)의 종류
+타입(Type) : 자료의 형태
+
+타입스크립트 : 데이터 종류를 표현해 주는 방식
+
+원시타입
+이를 모아 하나로 만들어낸 방식이 객체
+1. 숫자타입
+2. 문자열타입 : ' ' - 문자(한글자 ex) '5', 'a') / " " - 문자열(두글자 이상 ex) "15", "abcd"
+2-1. 템플릿 리터럴 : ` ` - 들여쓰기, 줄내림 등 표현 가능   ex) "안녕     = 안녕반가워           `안녕     =   안녕
+                                                                           반가워"                               반가워`       반가워
+   표현식(값을 만들어 리턴하는 식) 삽입 : 리터럴(` `) 내 ${} 를 통해 표현식 삽입 가능
+ex) if. x= 만나서 / ` 안녕 ${x} 반가워 ` = 안녕 만나서 반가워
+3. 불리언 타입 : true or false
+4. undefined 타입 : 값을 정의하지 않았다(값을 모른다는 의미)
+5. null타입 : 값이 없다(값이 진짜 비어있다는 의미)
+6. 심볼타입
+
+
+데이터타입 : 자료형
+불변성(immutable) : 데이터 값 변경 X
+원시데이터는 immutable한 데이터타입임
+- number : 1 / string : 'a' / boolean : true, false / undefined : undefined / null : null / symbol : Symbol() 만들어진 값 변경불가
+가변성(mutable) : 데이터 값 변경 O
+
+복합형 데이터 객체
+객체는 원시데이터를 모아서 저장하고 관리하는 것
+if) const lee = { age:20, marry : true } 여기서 lee는 lee.age / lee.marry 총 두 가지의 값을 가진다. 즉, block {} 안의 속성 모두에 대한 값
+
+동적 타이핑 : 자바스크립트는 동적이라 데이터타입을 스스로 분류함
+
+반드시 알아야함
+1. 데이터타입 : 자료(리터럴 값)의 종류
+2. js에서는 값 리터럴에 따라 변수의 종류를 구별(타입을 추론)
+3. 타입을 추측해서  타입을 변경
+```
+
+# js Syntax 코드 위치
+
+1. inline 방식
+
+```html
+<div class="wrap" onclick="alert('안녕');"></div>
+```
+
+2. 태그 방식
+
+```html
+<script>
+  alert("반가워");
+</script>
+```
+
+3. 외부파일 방식
+
+```html
+<script src="./js/script.js">
+  alert("반가워"); // 실행안됨
+</script>
+```
+
+# Swiper Slide 적용해 보기
+
+- Slide 를 직접 코딩하지 마세요.
+- 사용법을 배운다.
+- Swiper(https://swiperjs.com/), Slick(https://kenwheeler.github.io/slick/), BxSlider(https://bxslider.com/) 가 있어요.
+
+## 1. Swiper 슬라이드 적용시 주의 사항
+
+- html 로드 완료 및 이미지 로드 완료 후 실행 권장.
+
+```js
+window.addEventListener("load", function () {
+  // 실제 슬라이드 코드 배치하자.
+});
 ```
 
 # Swiper Slide 적용해 보기 2.
@@ -402,56 +492,6 @@ window.addEventListener("load", function () {
 }
 ```
 
-# js 3장
-
-```txt
-DOM(Document Object Model)
-   - html 을 읽고, 수정 등등의 조작을 하는
-     함수 (DOM API)
-     document.querySelector(".wrap")
-
-    클라이언트 사이드 API
-    DOM, BOM, Canvas, XMLHttpRequest, fetch
-    requestAnimationFrame, SVG, Web Storage,
-    Web Component, Web Worker 등..
-
-    Node.js   설치를 하면 자동으로
-    npm 설치 됩니다. Node Package(js 소스) Manager
-    https://www.npmjs.com/
-
-    npm install 패키지명@버전
-    node -v
-    npm -v
-
-    nvm (Node.js 의 버전을 자유롭게 변경하고, 설치)
-
-    yarn install 패키지명@버전
-```
-
-# js 4장
-
-- var 변수명 = 변수값;
-- let 변수명 = 변수값;
-- const 변수명 = 변수값;
-
-```txt
-   호이스팅(hoisting)은 변수, 함수를 선언하지 않았는데도 사용할수있음(hoisting이 일어나지 않도록 주의 : var 쓰지 말자)
-```
-
-# js 5장
-
-```txt
-코딩에서의 값 : 변수에 할당(보관한)된 결과 / 표현식이 평가(식을 해석해서 값을 생성하고 참조하는 것)된 결과를 말한다
-변수 : 컴퓨터 공간에 이름을 붙여둔 방 한개
-
-리터럴 : 사람이 이해할 수 있는 문자 혹은 약속된 기호를 사용해서 값을 생성하는 표기법
-리터럴은 값을 평가해서 코드에 활용하기 위한 문법
-
-표현식(experession) : 값으로 평가될 수 있는 모든 식
-
-문(statement) : 프로그램을 구성하는 기본단위 / 최소 실행단위
-```
-
 # css의 opcity와 position의 이해
 
 - opacity는 DOM의 내용까지도 투명도가 적용됨
@@ -528,11 +568,6 @@ tags.classList.contain("클래스명");
 
 # js의 함수란 1번
 
-- 동일한 코드가 2번 이상 반복되면 함수를 만드려고 하자
-- 반복이 되지 않더라도 하나의 기닝이 너무 복잡하면 함수를 만들려고 하자
-- 복잡하지 않은데 코드가 너무 길어지면 함수로 묶어주려고 하자
-- 실행의 결과가 그때, 그때 다른 경우에도 만들자
-
 ```js
 // 함수 만들기
 function 적절한동사() {
@@ -589,4 +624,111 @@ function divide(_num1, _num2) {
   return a / b;
 }
 divide(a, b);
+```
+
+# 함수의 이해 3번
+
+1. 함수를 만들어야겠다고 판단하는 케이스
+
+- 동일한 코드가 2번 이상 반복되면 함수를 만드려고 하자
+- 반복이 되지 않더라도 하나의 기닝이 너무 복잡하면 함수를 만들려고 하자
+- 복잡하지 않은데 코드가 너무 길어지면 함수로 묶어주려고 하자
+- 실행의 결과가 그때, 그때 다른 경우에도 만들자
+
+2. 화살표 함수를 만들어야 하는 이유
+
+- 트랜드 쫒아가기
+- this를 정확히 지정하기 위해서
+- 코드가 해석하기 더 어려워지기 때문에
+
+```js
+function say() {
+  console.log("안녕", this);
+}
+```
+
+: step 1.
+
+```js
+say()=>{
+  console.log("안녕", this);
+}
+```
+
+: step 2.
+
+```js
+const say = () => {
+  console.log("안녕", this);
+};
+```
+
+: 매개 변수가 있는 경우
+
+```js
+function say(_who) {
+  console.log("안녕", _who, this);
+}
+```
+
+: step 1.
+
+```js
+say(_who)=>{
+  console.log("안녕", _who, this);
+}
+```
+
+: step 2.
+
+```js
+const say = (_who) => {
+  console.log("안녕", _who, this);
+};
+```
+
+- this의 정확한 이해
+  : 화살표 함수를 사용하면 일반적으로 큰 고민없이 사용
+  : but, 함수 안에 this를 작성하면 상황이 달라짐
+  : 화살표 함수에서 this는 window를 가르킴
+  : 결론은 화살표 함수에서 this를 사용한다면 console.log(this) 확인 필수
+  : 화살표 함수는 예전 일반 함수에서 window를 참조하지 못하는 문제를 해결
+
+```js
+// this 의 차이
+const btWrap = document.querySelector(".bt-wrap");
+// 일반 함수는 this가 타이핑이 된 곳을 가르킨다
+btWrap.addEventListener("click", function () {
+  console.log(this);
+});
+// 화살표 함수는 this가 window를 가르킨다
+btWrap.addEventListener("click", () => {
+  console.log(this);
+}); // 따라서 화살표 함수에서 this 사용 주의
+```
+
+# 배열의 이해
+
+- [ 요소, 요소, 요소, 요소]
+  : 요소로 담을 수 있는 자료형은 7가지
+- 배열의 속성(배열을 위한 특별한 변수)은 1개가 있음
+  : length (요소의 개수)
+- 배열의 메소드(배열을 위한 특별한 함수)는 매우 많음
+- 상당히 많은 메소드(배열을 위한 함수)가 있음
+- 배열.forEach((요소)=>{}), 배열.map((요소)=>{}), 배열.filter((요소)=>{}), 배열.find((요소)=>{})
+
+```js
+// 배열이라면 반복하자.
+result.forEach((item) => {
+  const tag = `<a href=${item.link} class="list-box">
+        <div class="list-box-img br-20" style="background: url('./images/${item.imgpath}') no-repeat center; background-size: cover"></div>
+        <div class="list-box-cate">
+          <img src="./images/icon/${item.icon}" alt="${item.category}" />
+          <span style="color:${item.txtcolor};">${item.category}</span>
+        </div>
+        <p class="list-box-title">${item.title}</p>
+        <span class="list-box-day">${item.day}</span>
+        </a>`;
+  allTag = allTag + tag;
+});
 ```
