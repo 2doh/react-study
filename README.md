@@ -591,10 +591,7 @@ window.addEventListener("load", function () {
 - 기본 css 와 js 파일은 CDN 으로 참조한다.
 
 ```html
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 ```
 
@@ -1088,3 +1085,5 @@ result.forEach((item) => {
 
 - 저작권 밝히기
 - 첫 화면만 연습하면 된다
+
+리액트 스터디
