@@ -225,7 +225,7 @@ console.log(var_4); // 응답에러
 ```txt
 ````
 
-# React 기초 1
+# React 기초
 
 ## 0. 사전준비
 
