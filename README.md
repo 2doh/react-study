@@ -63,6 +63,49 @@ const 정군 = {}     // 이미 주소는 고정이 됨
 - favicon 만들기 (보통 디자이너 담당)
   : https://realfavicongenerator.net/
 
+- ::before, ::after 샘플
+
+```html
+<body>
+  <style>
+    .wrap {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      background: goldenrod;
+      margin: 100px auto;
+      padding: 50px;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 100px auto;
+      background: hotpink;
+      text-align: center;
+    }
+    .box span::before {
+      display: inline-block;
+      content: "";
+      width: 10px;
+      height: 10px;
+      background-color: red;
+    }
+    .box span::after {
+      display: inline-block;
+      content: "";
+      width: 10px;
+      height: 10px;
+      background-color: blue;
+    }
+  </style>
+  <div class="wrap">
+    <div class="box">
+      <span>안녕</span>
+    </div>
+  </div>
+</body>
+```
+
 # React 기초 2 리액트 컴포넌트
 
 ## 1.0. 컴포넌트를 왜 생성하는가
